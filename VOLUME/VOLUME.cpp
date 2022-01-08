@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+struct Distance
+{
+	int feet;
+	float inches;
+};
+
+struct Volume
+{
+	Distance lenght;
+	Distance width;
+	Distance height;
+};
+
+int main()
+{
+	float l, w, h;
+	Volume room1 = { {16, 3.5}, {12, 6.25}, {8, 1.75} };
+	l = room1.lenght.feet + room1.lenght.inches / 12.0;
+	w = room1.width.feet + room1.width.inches / 12.0;
+	h = room1.height.feet + room1.height.inches / 12.0;
+
+	cout << "Volume = " << l * w * h << " cubic feet " << endl;
+
+	system("pause");
+	return 0;
+}
